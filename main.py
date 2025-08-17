@@ -1,23 +1,31 @@
 import random
 import time
+from colorama import init, Fore, Style
+from rctc import ctext
 
-
-game = ["rock","paper","sissor"]
-random_item = random.choice(game)
-
-print("\n\nWELCOME TO THE GAME\n")
+init(autoreset=True)
 
 while True:
-    round = input("How many rounds you want to play: ")
+    print('\n')
+    print(f"{ctext("⫸ ^_^ WELCOME TO THE GAME ^_^", repeat=3, delay=0.5)}")
+    time.sleep(2)
+    print(ctext("⫸ How many rounds you want to play: ", repeat=2, delay=0.5))
+    round = input('⫸')
     try:
         int_round = int(round)
         break
     except:
         print("❕enter in integer")
 
+game = [
+    "rock",
+    "paper",
+    "sissor"
+    ]
+random_item = random.choice(game)
 score = 0
 for i in range(int_round):
-    print(f"Round: {i+1}")
+    print(Fore.GREEN + Style.BRIGHT + f"Round: {i+1}" + Style.RESET_ALL )
     user = input("Choose (Rock, Paper, Sissor) : ").strip().lower()
     if user not in ["rock","paper","sissor"]:
         print("choose in (Rock, Paper, Sissor)")
@@ -34,3 +42,4 @@ for i in range(int_round):
 
    
 print(f"You scored {score}")
+
