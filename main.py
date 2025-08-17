@@ -1,7 +1,7 @@
 import random
 import time
 
-score = 0
+
 game = ["rock","paper","sissor"]
 random_item = random.choice(game)
 
@@ -15,12 +15,15 @@ while True:
     except:
         print("❕enter in integer")
 
-for _ in range(int_round):
+score = 0
+for i in range(int_round):
+    print(f"Round: {i+1}")
     user = input("Choose (Rock, Paper, Sissor) : ").strip().lower()
-    if user in ["rock","paper","sissor"]:
+    if user not in ["rock","paper","sissor"]:
+        print("choose in (Rock, Paper, Sissor)")
+    else:
         print("bot choosing...")
         time.sleep(1)
-        global score
         if user == random_item:
             print("You win")
             score += 1
@@ -29,9 +32,5 @@ for _ in range(int_round):
         else: 
             print("You loose")
 
-    else:
-        print("choose in (Rock, Paper, Sissor)")
-    
-
    
-print(f"Your scored {score}")
+print(f"You scored {score}")
