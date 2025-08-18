@@ -2,11 +2,14 @@ import random
 import time
 from colorama import init, Fore, Style
 from rctc import ctext
-from loading import bar
+from tqdm import tqdm
 
 init(autoreset=True)
 
-loading()
+
+for i in tqdm(range(100), desc="Loading", ncols=80, bar_format=Fore.GREEN + "{l_bar}{bar}" + Style.RESET_ALL):
+    time.sleep(0.05)
+
 
 while True:
     print("\n")
