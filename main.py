@@ -2,8 +2,11 @@ import random
 import time
 from colorama import init, Fore, Style
 from rctc import ctext
+from loading import bar
 
 init(autoreset=True)
+
+loading()
 
 while True:
     print("\n")
@@ -21,19 +24,21 @@ game = ["rock", "paper", "sissor"]
 random_item = random.choice(game)
 score = 0
 for i in range(int_round):
-    print(Fore.GREEN + Style.BRIGHT + f"ROUND: {i+1}" + Style.RESET_ALL)
-    user = input("🤔 Choose (Rock, Paper, Sissor) : ").strip().lower()
-    if user not in ["rock", "paper", "sissor"]:
-        print("choose in (Rock, Paper, Sissor)")
-    else:
-        print("🤖 bot choosing...")
-        time.sleep(1)
-        if user == random_item:
-            print("🏆 You win")
-            score += 1
+    print(Fore.GREEN + Style.BRIGHT + f"ROUND: {i+1}")
+    while True:
+        user = input("🤔 Choose (Rock, Paper, Sissor) : ").strip().lower()
+        if user not in ["rock", "paper", "sissor"]:
+            print( Fore.RED + "❗choose in (Rock, Paper, Sissor)❗")
         else:
-            print("💔 You loose")
-        print('\n')
+            print("🤖 bot choosing...")
+            break
+    time.sleep(1)
+    if user == random_item:
+        print("🏆 You win")
+        score += 1
+    else:
+        print("💔 You loose")
+    print('\n')
 
 if score > 0:
     print(f"😍 You scored {score}")
