@@ -16,12 +16,12 @@ git clone https://github.com/Ranajit08/Rock_Paper_Sissor_Game
 ```
 ## Project Structure
 Rock-Paper-Sissor/
-|—— .gitignore
-|—— main.py
-|—— rctc.py
-|—— README.md
-|—— requirements.txt
-⌊__ LICENSE
+—— .gitignore
+—— main.py
+—— rctc.py
+—— README.md
+—— requirements.txt
+—— LICENSE
 
 ### Author:
 - Ranajit Mitra
