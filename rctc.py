@@ -2,7 +2,7 @@ import random
 import time
 from colorama import init, Fore
 
-
+# random cmd text colour
 def ctext(text: str, repeat: int, delay: int) -> None:
     colors = [Fore.RED, Fore.GREEN, Fore.BLUE, Fore.YELLOW, Fore.CYAN, Fore.MAGENTA]
 
